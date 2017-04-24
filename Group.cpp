@@ -27,7 +27,8 @@ const Stock& Group::GetStock(std::string ticker) const {
 }
 
 //wrong calculation. Notice lenth(SPY)>len(stock). Use ETF::Slice(startdate, enddate).
-bool Group::Compute() { 	double re_turnSum = 0;
+bool Group::Compute() {
+  double re_turnSum = 0;
 	for (auto j = stocks.begin(); j != stocks.end(); j++)
 		re_turnSum += j->second.re_turn;
 	AAR[0] = re_turnSum / stocks.size() - SPY.re_turn[i];

@@ -76,7 +76,6 @@ bool Experiment::DoExperiment() { // Wrong logic. Please see pseudo code and fix
 		AAR_avg[0][i] = SubGroup.GetAAR()[i];
 		CAAR_avg[0][i] = SubGroup.GetCAAR()[i];
 	}
-
 	for (int i = 1; i < resample_times; ++i) {
 		SubGroup = Sampling(big_groups[i]);
 		SubGroup.Compute();

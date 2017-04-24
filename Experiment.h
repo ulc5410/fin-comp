@@ -1,6 +1,7 @@
 #pragma once
 
 #include<vector>
+
 #include <stdlib.h>
 #include <time.h>
 #include <algorithm>
@@ -18,6 +19,7 @@ public:
 	Experiment();
 	Experiment(double t_h, int r_t);
 	~Experiment();
+
 	const NumericMatrix<double, long>& GetAARavg() const;
 	const NumericMatrix<double, long>& GetCAARavg() const;
 	const double GetThreshold() const;
