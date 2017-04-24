@@ -3,19 +3,24 @@
 #include<map>
 #include<string>
 #include<vector>
-using namespace std;
-class Group
-{
+#include"Stock.h"
+
+class Group {
 private:
-	map<string, Stock> stocks;
-	vector<double> AAR= vector<double>(91);
-	vector<double> CAAR = vector<double>(91);
+	std::map<std::string, Stock> stocks;
+	std::vector<std::string> map_keys;
+	std::vector<double> AAR = std::vector<double>(91);
+	std::vector<double> CAAR = std::vector<double>(91);
 public:
 	Group();
+	Group(const Group& g_p); //Realize the copy constructor
 	~Group();
-	vector<double> GetAAR() { return AAR; }
-	vector<double> GetCAAR() { return CAAR; }
-	bool PushStock(Stock s);
-	bool Compute();
+	const std::vector<double>& GetAAR();
+	const std::vector<double>& GetCAAR();
+	const Stock& GetStock(std::string ticker) const;
+	const std::vector<std::string>& GetMapKeys() const;
+	const int GetSize() const;
+	bool PushStock(const Stock& s);
+	bool Compute(); // wrong calculation
 };
 
