@@ -13,9 +13,9 @@ private:
 public:
 	Group();
 	~Group();
-	vector<double> getAAR() { return AAR; }
-	vector<double> getCAAR() { return CAAR; }
-	bool pushStock(Stock s);
-	bool compute();
+	vector<double> GetAAR() { return AAR; }
+	vector<double> GetCAAR() { return CAAR; }
+	bool PushStock(Stock s);
+	bool Compute();
 };
 

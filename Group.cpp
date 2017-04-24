@@ -9,13 +9,13 @@ Group::~Group()
 {
 }
 
-bool Group::pushStock(Stock s)
+bool Group::PushStock(Stock s)
 {
 	stocks[s.getTicker()] = s;
 	return true;
 }
 
-bool Group::compute()
+bool Group::Compute()
 {
 	double re_turnSum = 0;
 	for (auto j = stocks.begin(); j != stocks.end(); j++)
@@ -24,7 +24,7 @@ bool Group::compute()
 	CAAR[0] = AAR[0];
 	for (int i = 1; i < AAR.size(); i++)
 	{
-		double re_turnSum = 0;
+		re_turnSum = 0;
 		for (auto j = stocks.begin(); j != stocks.end(); j++)
 			re_turnSum += j->second.re_turn;
 		AAR[i] = re_turnSum / stocks.size() - SPY.re_turn[i];
